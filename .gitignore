@@ -1,0 +1,30 @@
+# Environment
+.env
+.env.*
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.venv/
+venv/
+*.egg-info/
+
+# Alembic
+*.pyc
+
+# Node
+node_modules/
+dist/
+.cache/
+
+# Electron
+out/
+release/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# VSCode
+.vscode/
