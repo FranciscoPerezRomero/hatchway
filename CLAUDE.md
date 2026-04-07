@@ -120,3 +120,13 @@ FastAPI must whitelist Electron's origin. Electron renderer pages load from `fil
 
 ## VPS Deployment (No Docker)
 API runs as a systemd service at `/var/www/hatchway-api`. Full setup guide planned at `docs/deployment-vps.md`. The service file template is at `backend-api/hatchway-api.service`. Use `screen` or `tmux` during deploy to survive SSH disconnects.
+
+## Approach
+- Think before acting. Read existing files before writing code.
+- Be concise in output but thorough in reasoning.
+- Prefer editing over rewriting whole files.
+- Do not re-read files you have already read unless the file may have changed.
+- Test your code before declaring done.
+- No sycophantic openers or closing fluff.
+- Keep solutions simple and direct.
+- User instructions always override this file.

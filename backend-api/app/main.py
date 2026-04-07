@@ -1,6 +1,8 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from app.routers import projects
+from app.routers import images
+
 
 # *Instancia de FastAPI
 app = FastAPI()
@@ -14,8 +16,9 @@ app.add_middleware(
     allow_headers = ["*"],
 )
 
-# *Router
+# *Routers
 app.include_router(projects.router)
+app.include_router(images.router)
 
 # *Endpoint root
 @app.get("/")

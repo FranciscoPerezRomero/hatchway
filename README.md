@@ -8,7 +8,7 @@ Sistema integral para gestionar proyectos de desarrollo con sincronización auto
 
 | Componente | Tecnología | Estado |
 |------------|-----------|--------|
-| `backend-api/` | FastAPI + PostgreSQL | ✅ En desarrollo |
+| `backend-api/` | FastAPI + PostgreSQL | ✅ Completo |
 | `desktop-app/` | Electron + React + TypeScript | 🔜 Próximamente |
 | `portfolio-updates/` | React | 🔜 Próximamente |
 
@@ -59,11 +59,13 @@ CLOUDINARY_API_SECRET=your_api_secret
 ## Endpoints principales
 
 ```
-GET    /api/projects          Lista proyectos
-POST   /api/projects          Crea proyecto
-GET    /api/projects/{id}     Obtiene uno
-PUT    /api/projects/{id}     Actualiza
-DELETE /api/projects/{id}     Elimina
+GET    /api/projects                      Lista proyectos
+POST   /api/projects                      Crea proyecto
+GET    /api/projects/{id}                 Obtiene uno
+PUT    /api/projects/{id}                 Actualiza
+DELETE /api/projects/{id}                 Elimina
+POST   /api/projects/{id}/images          Sube imagen a Cloudinary
+DELETE /api/images/{public_id}            Elimina imagen de Cloudinary
 ```
 
 ## Arquitectura
