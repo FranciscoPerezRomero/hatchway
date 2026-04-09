@@ -9,14 +9,14 @@ Sistema integral para gestionar proyectos de desarrollo con sincronización auto
 | Componente | Tecnología | Estado |
 |------------|-----------|--------|
 | `backend-api/` | FastAPI + PostgreSQL | ✅ Completo |
-| `desktop-app/` | Electron + React + TypeScript | 🔜 Próximamente |
+| `desktop-app/` | Electron + React + TypeScript | 🚧 En desarrollo |
 | `portfolio-updates/` | React | 🔜 Próximamente |
 
 ## Requisitos
 
 - Python 3.13+
 - PostgreSQL 16+
-- Node.js 20+ / pnpm
+- Node.js 20+ / pnpm 9+
 - Poetry
 
 ## Setup local — Backend API
@@ -66,6 +66,20 @@ PUT    /api/projects/{id}                 Actualiza
 DELETE /api/projects/{id}                 Elimina
 POST   /api/projects/{id}/images          Sube imagen a Cloudinary
 DELETE /api/images/{public_id}            Elimina imagen de Cloudinary
+```
+
+## Setup local — Desktop App
+
+```bash
+cd desktop-app
+pnpm install
+pnpm dev        # Abre la ventana de Electron con hot reload
+```
+
+Requiere que el backend esté corriendo en `http://localhost:8000`. Configura `desktop-app/.env`:
+
+```
+VITE_API_URL=http://localhost:8000
 ```
 
 ## Arquitectura
