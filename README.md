@@ -82,6 +82,15 @@ Requiere que el backend esté corriendo en `http://localhost:8000`. Configura `d
 VITE_API_URL=http://localhost:8000
 ```
 
+### Funcionalidades implementadas
+
+- Listado de proyectos en grilla con tarjetas por estado
+- Formulario de creación con validación (react-hook-form + zod)
+  - Título, slug, tagline, descripción, status
+  - Tech stack con tags dinámicos
+  - URLs: GitHub, live, demo
+- Modal reutilizable con scroll interno
+
 ## Arquitectura
 
 ```
