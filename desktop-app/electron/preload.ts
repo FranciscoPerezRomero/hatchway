@@ -1,6 +1,11 @@
 import { ipcRenderer, contextBridge } from 'electron'
 
-// --------- Expose some API to the Renderer process ---------
+// *Abre el diálogo de selección de imagen nativo de Electron
+contextBridge.exposeInMainWorld('electronAPI', {
+  selectImage: (): Promise<{ dataUrl: string; fileName: string; mimeType: string } | null> =>
+    ipcRenderer.invoke('dialog:select-image'),
+})
+
 contextBridge.exposeInMainWorld('ipcRenderer', {
   on(...args: Parameters<typeof ipcRenderer.on>) {
     const [channel, listener] = args

@@ -11,8 +11,16 @@ export default defineConfig({
     react(),
     electron({
       main: {
-        // Shortcut of `build.lib.entry`.
         entry: 'electron/main.ts',
+        onstart({ startup }) {
+          // ELECTRON_RUN_AS_NODE=1 may be set system-wide (e.g. left over from
+          // electron's postinstall script). If inherited, Electron starts in
+          // plain Node mode and none of the app APIs (app, BrowserWindow) are
+          // available. Strip it before spawning so Electron runs as an app.
+          const env = { ...process.env }
+          delete env.ELECTRON_RUN_AS_NODE
+          startup(['.', '--no-sandbox'], { env })
+        },
       },
       preload: {
         // Shortcut of `build.rollupOptions.input`.
