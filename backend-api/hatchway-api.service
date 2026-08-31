@@ -1,0 +1,16 @@
+[Unit]
+Description=Hatchway API - FastAPI backend
+After=network.target postgresql.service
+
+[Service]
+Type=simple
+User=www-data
+WorkingDirectory=/var/www/hatchway-api
+Environment="PATH=/var/www/hatchway-api/.venv/bin"
+EnvironmentFile=/var/www/hatchway-api/.env
+ExecStart=/var/www/hatchway-api/.venv/bin/uvicorn app.main:app --host 127.0.0.1 --port 8001 --workers 2
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
