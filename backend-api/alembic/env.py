@@ -6,6 +6,9 @@ from sqlalchemy import pool
 from alembic import context
 
 from app.models.project import Base
+from app.models.post import Post  # noqa: F401 — registra Post en Base.metadata para autogenerate
+from app.models.price_catalog_item import PriceCatalogItem  # noqa: F401
+from app.models.quote import Quote  # noqa: F401
 
 
 # this is the Alembic Config object, which provides
